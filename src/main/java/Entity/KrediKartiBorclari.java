@@ -20,6 +20,44 @@ public class KrediKartiBorclari {
     @Column(name = "Son_Odeme_Tarihi")
     private String sonOdemeTarihi; // Use a date type if necessary
 
-    // Getters and Setters
+    public Long getBorcId() {
+        return borcId;
+    }
+
+    public void setBorcId(Long borcId) {
+        this.borcId = borcId;
+    }
+
+    public Kartlar getKart() {
+        return kart;
+    }
+
+    public void setKart(Kartlar kart) {
+        this.kart = kart;
+    }
+
+    public double getBorcMiktari() {
+        return borcMiktari;
+    }
+
+    public void setBorcMiktari(double borcMiktari) {
+        this.borcMiktari = borcMiktari;
+    }
+
+    public double getMinimumOdeme() {
+        return minimumOdeme;
+    }
+
+    public void setMinimumOdeme(double minimumOdeme) {
+        this.minimumOdeme = minimumOdeme;
+    }
+
+    public String getSonOdemeTarihi() {
+        return sonOdemeTarihi;
+    }
+
+    public void setSonOdemeTarihi(String sonOdemeTarihi) {
+        this.sonOdemeTarihi = sonOdemeTarihi;
+    }
 }
 

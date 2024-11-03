@@ -1,24 +1,54 @@
 package Entity;
 
 import jakarta.persistence.*;
-import java.util.Date;
 
 @Entity
-@Table(name = "odemeplanlari")
+@Table(name = "Odeme_Planlari")
 public class OdemePlanlari {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long planId;
 
     @ManyToOne
-    @JoinColumn(name = "krediId", nullable = false)
+    @JoinColumn(name = "KrediID")
     private Krediler kredi;
 
-    private Double taksitMiktari;
+    @Column(name = "Taksit_Miktari")
+    private double taksitMiktari;
+    @Column(name = "Taksit_Tarihi")
+    private String taksitTarihi; // Use a date type if necessary
 
-    @Temporal(TemporalType.DATE)
-    private Date taksitTarihi;
+    public Long getPlanId() {
+        return planId;
+    }
 
-    // Getter ve Setter
+    public void setPlanId(Long planId) {
+        this.planId = planId;
+    }
+
+    public Krediler getKredi() {
+        return kredi;
+    }
+
+    public void setKredi(Krediler kredi) {
+        this.kredi = kredi;
+    }
+
+    public double getTaksitMiktari() {
+        return taksitMiktari;
+    }
+
+    public void setTaksitMiktari(double taksitMiktari) {
+        this.taksitMiktari = taksitMiktari;
+    }
+
+    public String getTaksitTarihi() {
+        return taksitTarihi;
+    }
+
+    public void setTaksitTarihi(String taksitTarihi) {
+        this.taksitTarihi = taksitTarihi;
+    }
 }
+
 
